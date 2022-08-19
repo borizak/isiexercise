@@ -1,4 +1,2 @@
-- lower case all strings in source_data
-- catch not found country and return []
-- catch geopy coordinates on wrong lat/long
-- route 200, 400, 500
+- lower case all strings in source_data and make service not case sensitive
+- catch not legal country name 
