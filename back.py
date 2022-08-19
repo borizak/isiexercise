@@ -64,16 +64,14 @@ def GET_by_custom_qualifier(qualifier:object):
     return [item for item in source_data if qualifier(item)]
     
 # SERVICE
-def __refresh_globals():
+def __fetch():
     global source_data, last_update, next_update
 
     if next_update <= time.time(): 
         # re-fetching all data
-        source_data = GET_ALL().get('records', None) 
+        source_data = GET_ALL()
         if not source_data:
             raise Exception(f"Could not load data for the app.")        
-
-       
         
         # droppin indexes until next GET_by_Key request
         indexes = {}
@@ -82,7 +80,7 @@ def __refresh_globals():
         last_update = time.time()
         next_update = last_update + 60 * update_rate_minutes   
 
-def __refresh_index(key):
+def __reindex(key):
     global indexes
 
     # dropping current index for the key
