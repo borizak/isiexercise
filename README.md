@@ -32,11 +32,6 @@ and Ships within a radius of a coordinate.
 json point should have 
 
 
-## Authors
-
-- [@Ben Izakson](https://github.com/borizak)
-
-
 ## Run Locally
 
 To run the service as a docker ,
@@ -52,4 +47,9 @@ Start the docker up simply from cli:
     ./docker.sh
 ```
 
+
+
+## Authors
+
+- [@Ben Izakson](https://github.com/borizak)
 
