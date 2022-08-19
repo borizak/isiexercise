@@ -1,0 +1,4 @@
+- lower case all strings in source_data
+- catch not found country and return []
+- catch geopy coordinates on wrong lat/long
+- route 200, 400, 500
