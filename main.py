@@ -11,12 +11,12 @@ def get_all_ships_data():
     return make_response('Not allowed to fetch all data at once', 
                         403)
 
-@application.route('/country/ships', methods =['GET'])
-def get_ships_from_country():
+@application.route('/country/<string:country>/ships/', methods =['GET'])
+def get_ships_from_country(country):
     code, body = None, None
     
     try:
-        country = request.json('country')
+        
 
         # Caching of 5 minutes on every requested index is enabled.(see back.GET_by_key)
         body = back.GET_by_key(key_name = 'country', key_value = country) 
@@ -31,18 +31,11 @@ def get_ships_from_country():
         body = body if isinstance(body, str) else jsonify({'json': body})
         return make_response(body, code)
 
-@application.route('/area/ships', methods = ['GET'])
-def get_ships_in_radius():
+@application.route('/area/radius_km/<float:radius>/lat/<float:lat>/lon/<float:lon>/ships', methods = ['GET'])
+def get_ships_in_radius(radius : float,lat : float, lon : float):
     code, body = None, None
     
     try:
-
-        try:
-            lat, lon= request.json('point').get('lat', None)
-            radius = request.json('radius_km')
-        except Exception as e:
-            code, body =400, 'missing argument'
-            raise e
         
         # qualifier function specific for requested (lat, lon, radius).
         def within_radius(ship:dict)-> bool:
@@ -50,6 +43,7 @@ def get_ships_in_radius():
             check_lon = ship['position']['coordinates'][1]
             dist = geo_distance.distance((lat,lon), (check_lat, check_lon))    
             return dist.kilometers <= radius
+
         body= back.GET_by_custom_qualifier(qualifier = within_radius)
         code = 200
             

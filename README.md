@@ -12,23 +12,14 @@ and Ships within a radius of a coordinate.
 #### Get ships from a Country of origin
 
 ```http
-  GET /country/ships
+  GET /country/<string:country>/ships
 ```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `country` | `string` | **Required**.Not Case Sensitive              |
 
 #### Get Ships located in an area
 
 ```http
-  GET /area/ships
+  GET /area/radius_km/<float:radius>/point/lat/<float:lat>/lon/<float:lon>/ships'
 ```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `point`   | `json` | **Required**. Contains 2 floats: `lat`, `lon`, the center of the area|
-| `radius_km`|`float`|**Required**. Determines the area around `point`|
 
 ## Run Locally
 
@@ -48,7 +39,7 @@ Start the docker up simply from cli:
 - You can now access the endpoints from 'http://<host>:5000/'
 
 
-## Authors
+## Author
 
 - [@Ben Izakson](https://github.com/borizak)
 
