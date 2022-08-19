@@ -29,8 +29,6 @@ and Ships within a radius of a coordinate.
 | :-------- | :------- | :-------------------------------- |
 | `point`   | `json` | **Required**. Contains 2 floats: `lat`, `lon`, the center of the area|
 | `radius_km`|`float`|**Required**. Determines the area around `point`|
-json point should have 
-
 
 ## Run Locally
 
