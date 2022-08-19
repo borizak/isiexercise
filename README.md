@@ -1,10 +1,10 @@
 # isiexercise 
 (19.08.22)
 
-This is a Read-only REST-api service for the (mock) ISI Ship DataBase.
-It exposes 2 types of query: 
-Ships from a Country of origin, 
-and Ships within a radius of a coordinate.
+- This is a Read-only REST-api service for the (mock) ISI Ship DataBase.
+- It exposes 2 types of query: 
+      Ships from a Country of origin, 
+      Ships within a radius of a coordinate.
 
 
 ## API Reference
@@ -24,7 +24,7 @@ and Ships within a radius of a coordinate.
 
 ## Run Locally
 
-To run the service as a docker ,
+- To run the service as a docker ,
 make sure you have git and Docker installed on the machine.
 Start the docker up simply from cli:
 
