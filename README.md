@@ -12,13 +12,13 @@ and Ships within a radius of a coordinate.
 #### Get ships from a Country of origin
 
 ```http
-  GET /country/<string:country>/ships
+  GET /ships/country/<string:country>
 ```
 
 #### Get Ships located in an area
 
 ```http
-  GET /area/radius_km/<float:radius>/point/lat/<float:lat>/lon/<float:lon>/ships'
+  GET ships/area/radius_km/<float:radius>/point/lat/<float:lat>/lon/<float:lon>/
 ```
 
 ## Run Locally

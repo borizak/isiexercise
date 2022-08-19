@@ -11,7 +11,7 @@ def get_all_ships_data():
     return make_response('Not allowed to fetch all data at once', 
                         403)
 
-@application.route('/country/<string:country>/ships/', methods =['GET'])
+@application.route('ships/country/<string:country>', methods =['GET'])
 def get_ships_from_country(country):
     code, body = None, None
     
@@ -31,7 +31,7 @@ def get_ships_from_country(country):
         body = body if isinstance(body, str) else jsonify({'json': body})
         return make_response(body, code)
 
-@application.route('/area/radius_km/<float:radius>/lat/<float:lat>/lon/<float:lon>/ships', methods = ['GET'])
+@application.route('ships/area/radius_km/<float:radius>/point/lat/<float:lat>/lon/<float:lon>', methods = ['GET'])
 def get_ships_in_radius(radius : float,lat : float, lon : float):
     code, body = None, None
     

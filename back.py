@@ -51,7 +51,7 @@ def GET_by_key(key_name : str, key_value: str):
     
     # collecting entries by the index
     res = []
-    relevant_indexes = indexes[key_name].get(key_value.lower(), []) 
+    relevant_indexes = indexes[key_name].get(key_value, []) 
     for i in relevant_indexes: 
         res.append(source_data[i])
     
