@@ -21,6 +21,7 @@ and Ships within a radius of a coordinate.
   GET ships/area/radius_km/<float:radius>/point/lat/<float:lat>/lon/<float:lon>/
 ```
 
+
 ## Run Locally
 
 To run the service as a docker ,
@@ -37,6 +38,7 @@ Start the docker up simply from cli:
 ```
 
 - You can now access the endpoints from 'http://HOSTNAME:5000/'
+
 
 
 ## Author
