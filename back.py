@@ -26,7 +26,7 @@ def GET_ALL():
         logger.error(f"Recieved Response from {response.url}:\n {response.status_code}.{response.text}") 
     
     # desensitizing the service to char case
-    data_raw = json.loads(json.dumps(data_raw).lower())
+    data_raw = json.loads(data_raw).get('records',[])
 
     # flattening entries
     #       from: {ship:{a:1,...}, position:{}}
@@ -37,17 +37,17 @@ def GET_ALL():
         flat_entry['position']= entry['position']
         data.append(flat_entry)
 
-    return data.get('records',[])
+    return data
 
 def GET_by_key(key_name : str, key_value: str):
     
     # fetching all data every <update_rate_minutes> minutes
-    __refresh_globals()
+    __fetch()
 
     
     if key_name not in indexes:
         # creating index for specific key
-        __refresh_index(key_name)
+        __reindex(key_name)
     
     # collecting entries by the index
     res = []
@@ -97,4 +97,4 @@ def __not_implemented_ERROR():
     raise Exception(f"Not Implemented")
 
 # ON LOAD
-__refresh_globals()
+__fetch()

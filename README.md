@@ -33,7 +33,7 @@ and Ships within a radius of a coordinate.
 ## Run Locally
 
 To run the service as a docker ,
-make sure you have git and Docker installed on your machine.
+make sure you have git and Docker installed on the machine.
 Start the docker up simply from cli:
 
 
@@ -45,6 +45,7 @@ Start the docker up simply from cli:
     ./docker.sh
 ```
 
+- You can now access the endpoints from 'http://<host>:5000/'
 
 
 ## Authors

@@ -1,7 +1,5 @@
-from flask import Flask, request, make_response, jsonify
+from flask import Flask, make_response, jsonify
 from logging import Logger
-
-from itsdangerous import json
 import back
 from geopy import distance as geo_distance, exc as geo_exceptions
 
