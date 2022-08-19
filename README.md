@@ -36,7 +36,7 @@ Start the docker up simply from cli:
     ./docker.sh
 ```
 
-- You can now access the endpoints from 'http://<host>:5000/'
+- You can now access the endpoints from 'http://HOSTNAME:5000/'
 
 
 ## Author
