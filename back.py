@@ -59,7 +59,7 @@ def GET_by_key(key_name : str, key_value: str):
 
 def GET_by_custom_qualifier(qualifier:object):
     # fetching all data every <update_rate_minutes> minutes
-    __refresh_globals()
+    __fetch()
     
     return [item for item in source_data if qualifier(item)]
     
