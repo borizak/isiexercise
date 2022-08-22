@@ -60,4 +60,4 @@ def get_ships_in_radius(radius : float,lat : float, lon : float):
 
 
 if __name__ == '__main__':
-    application.run(port=5000)
+    application.run(host = "0.0.0.0")

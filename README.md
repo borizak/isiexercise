@@ -34,10 +34,9 @@ Start the docker up simply from cli:
 
     cd ./isiexercise
     
-    docker build -t YOUR_IMAGE_NAME
+    docker build -t YOUR_IMAGE_NAME .
     
-    docker run YOUR_IMAGE_NAME
-    
+    docker run -p 5000:5000 YOUR_IMAGE_NAME 
 ```
 
 - You can now access the endpoints from 'http://HOSTNAME:5000/'
